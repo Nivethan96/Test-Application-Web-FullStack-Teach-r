@@ -1,9 +1,15 @@
+// Modules internes
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 
+// Les composants
+import DataContainer from '../components/ServerData'
+
+// Les variables
 export const SLIDER_WIDTH = Dimensions.get('window').width + 80
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
 
+// Fonction à exporter
 const CarouselCardItem = ({ item, index }) => {
     return (
         <View style={styles.container} key={index}>
