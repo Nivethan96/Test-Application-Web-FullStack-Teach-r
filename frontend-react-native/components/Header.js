@@ -1,6 +1,8 @@
+// Modules internes
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
+// Fonction à exporter
 const Header = ({ title }) => (
     <View style={styles.headerContainer}>
         <Text style={styles.headerText}>{title}</Text>
