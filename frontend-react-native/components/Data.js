@@ -1,20 +1,25 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, FlatList, TouchableHighlight, ListItem } from 'react-native';
 import axios from 'axios';
 
 export default function DataContainer() {
-    let [user, setUser] = React.useState([]);
+    let [user, setUser] = useState([]);
     const url = 'http://172.20.10.6:8000/';
 
     useEffect(() => {
-        getData();
+        getUser();
     }, []);
 
-    const getData = () => {
+    const getUser = () => {
         axios.get(`${url}show-users`)
             .then((res) => {
-                console.warn(res.data)
-                setUser(res.data.prenom)
+                // console.warn(res.data)
+                // //const userArray = (res.data[0].prenom)
+                const userArray = []
+                for (i in res.data) {
+                    userArray.push(res.data[i].prenom)
+                }
+                setUser(userArray)
             })
             .catch((err) => {
                 console.log(err)
@@ -22,20 +27,11 @@ export default function DataContainer() {
 
     }
 
-    //if (!user) { return null; }
+    if (!user) { return null; }
 
-    const renderUser = ({ item }) => {
-        return (
-            <ListItem>
-                <Text>{item.prenom}</Text>
-            </ListItem>
-        )
-    }
     return (
         <View>
-            <FlatList data={user}
-                renderItem={renderUser}
-            />
+            <Text>{user}</Text>
         </View>
     );
 }

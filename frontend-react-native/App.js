@@ -9,7 +9,6 @@ import DataContainer from './components/Data'
 
 const headerTitle = `Teach'rs favoris`;
 
-
 export default function App() {
 
   return (
