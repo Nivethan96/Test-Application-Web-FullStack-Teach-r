@@ -7,6 +7,7 @@ import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import CarouselCards from './components/CarouselCards';
 import Header from './components/Header';
 import ServerData from './components/ServerData';
+import StatsData from './components/StatsData';
 
 // Variables
 const headerTitle = `Teach'rs favoris`;
@@ -18,6 +19,7 @@ export default function App() {
       <Header title={headerTitle} />
       <CarouselCards />
       <ServerData />
+      <StatsData />
       <StatusBar style="auto" />
     </View>
   );

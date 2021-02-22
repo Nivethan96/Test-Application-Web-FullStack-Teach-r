@@ -1,8 +1,8 @@
+// Modules internes
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, FlatList, TouchableHighlight, ListItem } from 'react-native';
-// Module externes
+import { StyleSheet, View, Text} from 'react-native';
+// Modules externes
 import axios from 'axios';
-import CarouselCards from './CarouselCards'
 
 // Fonction à exporter
 export default DataContainer = () => {
