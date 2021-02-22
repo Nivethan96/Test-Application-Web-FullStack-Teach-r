@@ -23,7 +23,7 @@ There are essentially three components nested under the App component.
 There is a fourth component purely for testing reasons with user information
     
 The header contains the title, and the StatsData contains the number of people subscribed (present in database)
-The CarouselCard is supposed to contain the information of each subsriber but i have failed in displaying the users inside the carousel, so it has mock data for the moment
+The CarouselCard is supposed to contain the information of each subscriber but i have failed in displaying the users inside the carousel, so it has mock data for the moment
 
 That's why the fourth component is still present because it is successfully connected to backend server to retrieve and display information on the web page even though it is not to be displayed just on the screen.
 
