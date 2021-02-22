@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class StatsController extends ApiController
 {
     /**
-    * @Route("/stats", methods="GET")
+    * @Route("/show-stats", methods="GET")
     */
     public function index(StatsRepository $statsRepository)
     {
