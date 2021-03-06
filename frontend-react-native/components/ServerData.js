@@ -8,7 +8,7 @@ import axios from 'axios';
 export default DataContainer = () => {
     let [user, setUser] = useState([]);
     const userArray = []
-    const url = 'http://172.20.10.6:8000/';
+    const url = 'http://192.168.1.56:8000/';
 
     useEffect(() => {
         getUser();
