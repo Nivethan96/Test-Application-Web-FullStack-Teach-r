@@ -1,35 +1,25 @@
-// Modules internes
+// Buil-in modules
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 
-// Les composants de vue
+// All imported components
 import CarouselCards from './components/CarouselCards';
 import Header from './components/Header';
-import ServerData from './components/ServerData';
 import StatsData from './components/StatsData';
 
 // Variables
 const headerTitle = `Teach'rs favoris`;
 
-// Affichage principale
+// Main
 export default function App() {
   return (
     <View>
       <Header title={headerTitle} />
       <CarouselCards />
-      <ServerData />
       <StatsData />
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

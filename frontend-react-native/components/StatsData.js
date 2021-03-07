@@ -1,9 +1,10 @@
+// In-built modules
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-// Modules externes
+// REST Api
 import axios from 'axios';
 
-// Fonction à exporter
+// StatData compoent to be exported into App
 export default DataContainer = () => {
     let [stats, setStats] = useState([]);
     let compteur = 0;
@@ -16,7 +17,6 @@ export default DataContainer = () => {
     const getStats = () => {
         axios.get(`${url}show-stats`)
             .then((res) => {
-                // console.warn(res.data)
                 for (i in res.data) {
                     compteur += 1
                 }
@@ -25,11 +25,7 @@ export default DataContainer = () => {
             .catch((err) => {
                 console.log(err)
             })
-
     }
-
-    if (!stats) { return null; }
-
     return (
         <View style={styles.container}>
             <Text style={[styles.text]}>Nombre de personnes inscrites</Text>

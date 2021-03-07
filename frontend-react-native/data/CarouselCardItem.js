@@ -1,20 +1,19 @@
-// Modules internes
+// In-built modules
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from "react-native";
+/*
+    Carousel variables : SLIDER_WIDTH and ITEM_WIDTH
+    SLIDER_WIDTH = screen width
+    ITEM_WIDTH = SLIDER_WIDTH x 0.5
+*/
+export const SLIDER_WIDTH = Dimensions.get('window').width
+export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.5)
 
-// Les composants
-import DataContainer from '../components/ServerData'
-
-// Les variables
-export const SLIDER_WIDTH = Dimensions.get('window').width + 80
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
-
-// Fonction à exporter
+// Fonction which defines one Card item with its properties
 const CarouselCardItem = ({ item, index }) => {
     return (
         <View style={styles.container} key={index}>
-            <Text style={styles.header}>{item.title}</Text>
-            <Text style={styles.body}>{item.body}</Text>
+            <Text style={styles.header}>{item}</Text>
         </View>
     )
 }
@@ -37,17 +36,11 @@ const CarouselCardItem = ({ item, index }) => {
         header: {
             color: "#222",
             fontSize: 28,
+            textAlign:'center',
             fontWeight: "bold",
             paddingLeft: 20,
             paddingTop: 20
           },
-        body: {
-            color: "#222",
-            fontSize: 18,
-            paddingLeft: 20,
-            paddingLeft: 20,
-            paddingRight: 20
-        }
     })
 
 export default CarouselCardItem;

@@ -1,11 +1,10 @@
-// Modules internes
+// In-built modules
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text} from 'react-native';
-// Modules externes
+// REST Api
 import axios from 'axios';
 
-// Fonction à exporter
-export default DataContainer = () => {
+// Function which recovers users by connecting with the backend
+export default useData = () => {
     let [user, setUser] = useState([]);
     const userArray = []
     const url = 'http://192.168.1.56:8000/';
@@ -17,7 +16,6 @@ export default DataContainer = () => {
     const getUser = () => {
         axios.get(`${url}show-users`)
             .then((res) => {
-                // console.warn(res.data)
                 for (i in res.data) {
                     userArray.push(res.data[i].prenom)
                 }
@@ -26,14 +24,6 @@ export default DataContainer = () => {
             .catch((err) => {
                 console.log(err)
             })
-
     }
-
-    if (!user) { return null; }
-
-    return (
-        <View>
-            <Text>{user}</Text>
-        </View>
-    );
+    return [user];
 }
